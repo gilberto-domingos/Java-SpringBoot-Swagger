@@ -17,11 +17,14 @@ import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+
 
 @Configuration
 @EnableWebMvc
 @EnableSwagger2
-public class SwaggerConfig extends WebMvcConfigurerAdapter  {	
+public class SwaggerConfig implements WebMvcConfigurer {	
 	@Override
       public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		    registry.addResourceHandler("swagger-ui.html")
